@@ -23,10 +23,8 @@ logging.basicConfig(
 YCLIENTS_API_TOKEN = os.getenv("YCLIENTS_API_TOKEN")
 YCLIENTS_COMPANY_ID = os.getenv("YCLIENTS_COMPANY_ID")
 YCLIENTS_FORM_ID = os.getenv("YCLIENTS_APPLICATION_ID")
-assert all(YCLIENTS_API_TOKEN, YCLIENTS_COMPANY_ID,
-           YCLIENTS_FORM_ID) == True, "Can't find env var"
-api = YClientsAPI(token=YCLIENTS_API_TOKEN,
-                  company_id=YCLIENTS_COMPANY_ID, form_id=YCLIENTS_FORM_ID)
+assert all((YCLIENTS_API_TOKEN, YCLIENTS_COMPANY_ID, YCLIENTS_FORM_ID)) == True, "Can't find env var"
+api = YClientsAPI(token=YCLIENTS_API_TOKEN, company_id=YCLIENTS_COMPANY_ID, form_id=YCLIENTS_FORM_ID)
 
 
 def get_service_categories():
